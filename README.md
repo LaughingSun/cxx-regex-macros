@@ -76,13 +76,15 @@ expands to:
 #ifdef WORD_RE
 #undef WORD_RE
 #undef cxxre_WORD_RE_source
+#undef cxxre_WORD_RE_flags
 #undef cxxre_WORD_RE_test
 #undef cxxre_WORD_RE_search
 #undef cxxre_WORD_RE_replace
 #undef cxxre_WORD_RE_find
 #undef cxxre_WORD_RE_match
 #endif
-#define cxxre_WORD_RE_source /[a-z]+/i
+#define cxxre_WORD_RE_source [a-z]+
+#define cxxre_WORD_RE_flags i
 void* inline cxx11re_WORD_RE_find(char* subject, char** endp) \
 {auto*p=subject,*b,*e; \
   if(!(p=strpbrk(p,"a..zA..Z"))) return 0; \
