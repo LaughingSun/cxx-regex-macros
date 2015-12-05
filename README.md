@@ -74,7 +74,7 @@ SUBJECT  | the constant or variable to process must be an array or pointer
 REPLACER | replacement text
 
 
-# examples
+## examples
 
 Simple example:
 
@@ -88,12 +88,12 @@ while { p = WORD_RE(find endp endp) )
 }
 ```
 
-# expansion
+## expansion
 
 ```c++
 #regex WORD_RE /[a-z]+/i
 ```
-expands to:
+expands to (C):
 ```c++
 #ifdef WORD_RE
 #undef WORD_RE
@@ -107,13 +107,30 @@ expands to:
 #endif
 #define cxxre_WORD_RE_source [a-z]+
 #define cxxre_WORD_RE_flags i
-void* inline cxxre_WORD_RE_find(char* subject, char** endp) \
-{auto*p=subject,*b,*e; \
-  if(!(p=strpbrk(p,"a..zA..Z"))) return 0; \
-  e=(b=p)+strspn(b,"a..zA..Z"); \
-  if(endp)endp=e; \
-  return b;}
-#define WORD_RE(a,b,c,d) cxx11re_WORD_RE_##a(b,c,d) \
+void* inline cxxre_WORD_RE_find(char* subject, char** endp)
+{
+  auto*p=subject,*b,*e;
+  if(!(p=strpbrk(p,"a..zA..Z"))) return 0;
+  e=(b=p)+strspn(b,"a..zA..Z");
+  if(endp)endp=e;
+  return b;
+}
+#define WORD_RE(a,b,c,d) cxx11re_WORD_RE_##a(b,c,d)
+```
+or expands to (C++11):
+```c++
+#ifdef WORD_RE
+#undef WORD_RE
+#endif
+constexpr int cxx_WORD_RE0_find (char* subject, char** endp)
+{
+  auto*p=subject,*b,*e;
+  if(!(p=strpbrk(p,"a..zA..Z"))) return 0;
+  e=(b=p)+strspn(b,"a..zA..Z");
+  if(endp)endp=e;
+  return b;
+}
+#define WORD_RE(a,b,c,d) cxx11re_WORD_RE0_##a(b,c,d)
 ```
 then
 ```c++
@@ -121,7 +138,7 @@ WORD_RE(find endp endp)
 ```
 would expand to:
 ```c++
-cxxre_WORD_RE_find(endp,endp)
+cxxre_WORD_RE0_find(endp,endp, 0)
 ```
 
 # Regex support
