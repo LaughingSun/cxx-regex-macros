@@ -75,14 +75,14 @@ expands to:
 ```c++
 #ifdef WORD_RE
 #undef WORD_RE
-#undef cxx11re_WORD_RE_source
-#undef cxx11re_WORD_RE_test
-#undef cxx11re_WORD_RE_search
-#undef cxx11re_WORD_RE_replace
-#undef cxx11re_WORD_RE_find
-#undef cxx11re_WORD_RE_match
+#undef cxxre_WORD_RE_source
+#undef cxxre_WORD_RE_test
+#undef cxxre_WORD_RE_search
+#undef cxxre_WORD_RE_replace
+#undef cxxre_WORD_RE_find
+#undef cxxre_WORD_RE_match
 #endif
-#define cxx11re_WORD_RE_source /[a-z]+/i
+#define cxxre_WORD_RE_source /[a-z]+/i
 void* inline cxx11re_WORD_RE_find(char* subject, char** endp) \
 {auto*p=subject,*b,*e; \
   if(!(p=strpbrk(p,"a..zA..Z"))) return 0; \
@@ -97,7 +97,7 @@ WORD_RE(find endp endp)
 ```
 would expand to:
 ```c++
-cxx11re_WORD_RE_find(endp,endp)
+cxxre_WORD_RE_find(endp,endp)
 ```
 
 # Regex support
