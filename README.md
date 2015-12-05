@@ -130,4 +130,4 @@ cxxre_WORD_RE_find(endp,endp)
 
 # Giving support
 1. send me money (so I can work on this instead of paid projects OR as a paid project)
-2. Clone it, mess around a bit, push request qualified new features, create detailed bugs/issues, work on documentation and/or translation, or just think of something you can contribute (art work, how-to videos/tutorial, lunch, etc...)
+2. Clone it, mess around a bit, push request qualified new features, create detailed bugs/issues, work on documentation and/or translation, or just think of something you want to contribute (art work, how-to videos/tutorial, prayers, lunch, etc...)
