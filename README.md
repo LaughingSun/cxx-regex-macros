@@ -1,6 +1,8 @@
 # cxx-regex-macros
 A regex macro expander, or pre-preprocessor for c/c++ source and header files expands definitions into source code.
 
+Common use under the standard MIT license.
+
 # this is only a placeholder and has no released implementation YET.
 
 To use these you have seveal options:
