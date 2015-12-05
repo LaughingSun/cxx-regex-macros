@@ -3,7 +3,20 @@ A regex macro expander, or pre-preprocessor for c/c++ source and header files ex
 
 Common use under the standard MIT license.
 
-# this is only a placeholder and has no released implementation YET.
+### this is only a placeholder and has no released implementation YET.
+
+# Install
+
+Clone it, or download and unzip it to your favorite user (~/cxx-regex-macros) directory, cmake it, make it, install it (optional.)
+
+1. cd ~/cxx-regex-macros  # or to whereever you clone'd/unzipped it.
+2. cmake .                # don't forget the dot (period, fullstop, etc, etc, etc...)
+3. make
+4. make test              # optional
+5. make install           # also optional, but then you have to setup your bin and LD path stuff
+6. make dev-init          # only if you are debugging the pre-preprocessor itself
+
+# Command line / shell usage
 
 To use these you have seveal options:
 1. preprocess and output to an intermediate source file, then compile
@@ -21,9 +34,11 @@ cxx-regex main.cpp   -- this preprocesses main.cpp and outputs to stdout, just u
 flag/switch/command options include:
 - --help  suage information
 - --output  where to send output, defaults to stdout
-- --spec=SPEC  what c++11 spec variation you are using
+- --std=SPEC  what spec variation you are using [default: c++11]
 
-Also include quiet and the other usual suspecs.
+Also includes quiet, verbose and the other usual flags.  Type: "cxx-regex --usage" for details.
+
+# Source and code usage
 
 To define a regex within source code:
 
