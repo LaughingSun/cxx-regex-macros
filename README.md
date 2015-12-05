@@ -16,6 +16,13 @@ Typically cxx11-regex-preprocessor usage is like this:
 
 cxx1-regex main.cpp   -- this preprocesses main.cpp and outputs to stdout, just use the "-o file" or add ">file" to capture the output.
 
+flag/switch/command options include:
+- --help  suage information
+- --output  where to send output, defaults to stdout
+- --spec=SPEC  what c++11 spec variation you are using
+
+Also include quiet and the other usual suspecs.
+
 To define a regex within the source code file:
 
 ##regex NAME REGEXP FLAGS
