@@ -1,5 +1,5 @@
-# cxx-regex-preprocessor
-Pre-preprocessor for c/c++ source and header files expands definitions into source code.
+# cxx-regex-macros
+A regex macro expander, or pre-preprocessor for c/c++ source and header files expands definitions into source code.
 
 # this is only a placeholder and has no released implementation YET.
 
@@ -23,9 +23,13 @@ flag/switch/command options include:
 
 Also include quiet and the other usual suspecs.
 
-To define a regex within the source code file:
+To define a regex within source code:
 
-##regex NAME REGEXP FLAGS
+  \#regex NAME REGEXP
+
+If you wish to undefine them use "\#regexundef", which cleans up after itself. "\#undef" does NOT:
+
+  \#regexundef NAME
 
 To use instances simply include the identifier NAME with a regex COMMAND:
 
