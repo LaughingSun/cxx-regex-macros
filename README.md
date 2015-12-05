@@ -35,6 +35,7 @@ flag/switch/command options include:
 - --help  suage information
 - --output  where to send output, defaults to stdout
 - --std=SPEC  what spec variation you are using [default: c++11]
+- --all-methods generate all methods, not just the onces used
 - --no-inline turns off inline-ing for the expanded code.
 
 Also includes quiet, verbose and the other usual flags.  Type: "cxx-regex --usage" for details.
