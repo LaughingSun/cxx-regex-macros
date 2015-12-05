@@ -110,4 +110,4 @@ cxxre_WORD_RE_find(endp,endp)
 
 # Replacer support
 
-
+# Giving support
