@@ -45,6 +45,40 @@ while { p = WORD_RE(find endp endp) )
   printf( "Found a word, specifically: \"%s\n\n", p );
 }
 ```
+exands to:
+```c++
+#ifdef WORD_RE
+#undef WORD_RE
+#undef cxx11_WORD_RE_source
+#undef cxx11_WORD_RE_test
+#undef cxx11_WORD_RE_search
+#undef cxx11_WORD_RE_replace
+#undef cxx11_WORD_RE_find
+#undef cxx11_WORD_RE_match
+#endif
+#define cxx11_WORD_RE_source /[a-z]+/i
+void* inline cxx11_WORD_RE_find(char* subject, char** endp) \
+{auto*p=subject,*b,*e; \
+  if(!(p=strpbrk(p,"a..zA..Z"))) return 0; \
+  e=(b=p)+strspn(b,"a..zA..Z"); \
+  if(endp)endp=e; \
+  return b;}
+# endif
+#define WORD_RE(a,b,c,d) \
+# if #a == "test"
+   cxx11_WORD_RE_test(a,b,c)
+# elif #a == "search"
+   cxx11_WORD_RE_search(a,b,c)
+# elif #a == "replace"
+   cxx11_WORD_RE_replace(a,b,c)
+# elif #a == "find"
+   cxx11_WORD_RE_find(a,b,c)
+# elif #a == "match"
+   cxx11_WORD_RE_match(a,b,c)
+# else
+#  error Invalid regex command #a
+# endif
+```
 
 # Regex support
 
