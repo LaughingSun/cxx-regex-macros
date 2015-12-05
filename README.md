@@ -83,7 +83,6 @@ void* inline cxx11_WORD_RE_find(char* subject, char** endp) \
   e=(b=p)+strspn(b,"a..zA..Z"); \
   if(endp)endp=e; \
   return b;}
-# endif
 #define WORD_RE(a,b,c,d) \
 # if #a == "test"
    cxx11_WORD_RE_test(a,b,c)
