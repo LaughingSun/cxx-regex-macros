@@ -3,9 +3,22 @@ Pre-preprocessor for c/c++ source and header files expands definitions into sour
 
 # this is only a placeholder and has no released implementation YET.
 
+To use these you have seveal options:
+1. preprocess and output to an intermediate source file, then compile
+2. preprocess and output to temp file and use that during compile
+3. use the compilers stdin as file or pipe flag with backquotes for the sourcefile
+
+The regex preprocesser has a handful of options including preoptimization of the regex
+and generated code, all of which are turned off by default to allow the compiler to 
+make it's own decisions regarding optimization.
+
+Typically cxx11-regex-preprocessor usage is like this:
+
+cxx1-regex main.cpp   -- this preprocesses main.cpp and outputs to stdout, just use the "-o file" or add ">file" to capture the output.
+
 To define a regex within the source code file:
 
-#regex NAME REGEXP FLAGS
+##regex NAME REGEXP FLAGS
 
 To use instances simply include the identifier NAME with a regex COMMAND:
 
