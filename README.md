@@ -57,7 +57,7 @@ Specifically:
 
 usage | description
 ----- | -----
-NAME(test SUBJECT)  | test - returns 0 ot 1
+NAME(test SUBJECT [ENDP])  | test - returns 0 ot 1
 NAME(search SUBJECT [ENDP]) | search - returns index of match
 NAME(replace SUBJECT REPLACER [ENDP]) | replace - returns subject result
 NAME(find SUBJECT [ENDP]) | find - returns match
