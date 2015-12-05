@@ -1,4 +1,4 @@
-# cxx11-regex-preprocessor
+# cxx-regex-preprocessor
 Pre-preprocessor for c/c++ source and header files expands definitions into source code.
 
 # this is only a placeholder and has no released implementation YET.
@@ -12,9 +12,9 @@ The regex preprocesser has a handful of options including preoptimization of the
 and generated code, all of which are turned off by default to allow the compiler to 
 make it's own decisions regarding optimization.
 
-Typically cxx11-regex-preprocessor usage is like this:
+Typically cxx-regex-preprocessor usage is like this:
 
-cxx1-regex main.cpp   -- this preprocesses main.cpp and outputs to stdout, just use the "-o file" or add ">file" to capture the output.
+cxx-regex main.cpp   -- this preprocesses main.cpp and outputs to stdout, just use the "-o file" or add ">file" to capture the output.
 
 flag/switch/command options include:
 - --help  suage information
