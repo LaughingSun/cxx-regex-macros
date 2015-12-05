@@ -107,7 +107,7 @@ expands to:
 #endif
 #define cxxre_WORD_RE_source [a-z]+
 #define cxxre_WORD_RE_flags i
-void* inline cxx11re_WORD_RE_find(char* subject, char** endp) \
+void* inline cxxre_WORD_RE_find(char* subject, char** endp) \
 {auto*p=subject,*b,*e; \
   if(!(p=strpbrk(p,"a..zA..Z"))) return 0; \
   e=(b=p)+strspn(b,"a..zA..Z"); \
